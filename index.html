@@ -12,29 +12,34 @@
     <div class="container">
         <div class="content-container">
             <h2>Password generator</h2>
-            <div class="input-container">
-                <div class="form-group">
-                    <label for="pass-length">Password length</label>
-                    <input type="number" id="pass-length">
+            <div class="password-container">
+                <div class="input-container">
+                    <div class="form-group" id="pass-length-container">
+                        <label for="pass-length">Password length</label>
+                        <input type="number" id="pass-length">
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="chars1" class="chars-selector">
+                        <label for="chars1">Include lowercase letters</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="chars2" class="chars-selector">
+                        <label for="chars2">Include uppercase letters</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="chars3" class="chars-selector">
+                        <label for="chars3">Include symbols</label>
+                    </div>
+                    
                 </div>
-                <div class="form-group">
-                    <input type="checkbox" id="chars1" class="chars-selector">
-                    <label for="chars1">Include lowercase letters</label>
+
+                <div class="button-container">
+                    <button type="submit">Generate</button>
                 </div>
-                <div class="form-group">
-                    <input type="checkbox" id="chars2" class="chars-selector">
-                    <label for="chars2">Include uppercase letters</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="chars3" class="chars-selector">
-                    <label for="chars3">Include symbols</label>
-                </div>
+
+                
             </div>
             
-        </div>
-
-        <div class="password-container">
-            <span></span>
         </div>
     </div>
 </body>
