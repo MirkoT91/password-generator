@@ -1,9 +1,10 @@
 const pswLength = document.getElementById('pass-length');
 const lowercaseLetter = document.getElementById('chars1');
 const uppercaseLetter = document.getElementById('chars2');
-const symbols = document.getElementById('chars3');
+const numbers = document.getElementById('chars3');
+const symbols = document.getElementById('chars4');
 const generateBtn = document.getElementById('generate');
-const pswContainer = document.getElementById('password-container');
+const pswContainer = document.getElementById('generated-password');
 
 const getCheckbox = () => {
     let chars = '';
@@ -14,6 +15,9 @@ const getCheckbox = () => {
     if (uppercaseLetter.checked) {
         chars = chars + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     }
+    if (numbers.checked) {
+        chars = chars + '0123456789';
+    }
     if (symbols.checked) {
         chars = chars + '!@#$%&*?<>';
     }
@@ -21,19 +25,27 @@ const getCheckbox = () => {
     return chars;
 }
 
-const getRandomInt = () => {
+const getRandomLetter = () => {
     const chars = getCheckbox();
     const max = chars.length;
-    console.log(Math.floor(Math.random()*max));
+    const letter= chars[Math.floor(Math.random()*max)];
+    return letter;
 }
 
-const generatePsw = (e) => {
+const generatePsw = () => {
+    const length = pswLength.value;
+    let psw = '';
+    while(psw.length < length) {
+        psw = psw + getRandomLetter();
+    }
+
+    return psw;
+}
+
+const displayPsw = (e) => {
     e.preventDefault();
-
-
-    const psw = Math.random()
-
+    const psw = generatePsw();
+    pswContainer.value = psw;   
 }
 
-getRandomInt(pswLength.value);
-generateBtn.addEventListener('click', generatePsw);
+generateBtn.addEventListener('click', displayPsw);

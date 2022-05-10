@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Document</title>
 </head>
 <body>
@@ -19,15 +20,19 @@
                     </div>
                     <div class="form-group">
                         <input type="checkbox" id="chars1" class="chars-selector" checked>
-                        <label for="chars1">Lowercase letters</label>
+                        <label for="chars1">Lowercase</label>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" id="chars2" class="chars-selector" checked>
-                        <label for="chars2">Uppercase letters</label>
+                        <label for="chars2">Uppercase</label>
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" id="chars3" class="chars-selector">
-                        <label for="chars3">Symbols</label>
+                        <input type="checkbox" id="chars3" class="chars-selector" checked>
+                        <label for="chars3">Numbers</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="chars4" class="chars-selector">
+                        <label for="chars4">Symbols</label>
                     </div>
                     
                 </div>
@@ -36,8 +41,9 @@
                     <button type="submit" id="generate">Generate</button>
                 </div>
 
-                <div class="password-container" id="password-container">
-
+                <div class="generated-psw-container">
+                    <input class="generated-password" id="generated-password" type="text" value="">
+                    <span><i class="fa fa-clone"></i></span>
                 </div>
             
         </div>
